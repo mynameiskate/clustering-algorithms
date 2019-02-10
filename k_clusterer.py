@@ -3,7 +3,7 @@ import numpy as np
 from math_helper import MathHelper
 
 
-class ClusterCreator:
+class KClusterCreator:
     color_map = {1: 'm', 2: 'c', 3: 'b', 4: 'y', 5: '#FA4411', 6: 'g'}
 
     def __init__(self, cluster_count, observation_count, min, max):
@@ -26,7 +26,7 @@ class ClusterCreator:
     def set_color_map(self, color_map):
         self.color_map = color_map
 
-    def clusterize(self):
+    def create_clusters(self):
         self.observations = MathHelper\
             .map_df_to_clusters(self.observations, self.centers, self.color_map)
         self._adjust_centers()
